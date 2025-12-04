@@ -1,0 +1,25 @@
+{% extends 'medapp/base.html' %}
+{% block content %}
+
+<div class="card shadow p-4 mt-4">
+    <h3 class="text-primary">Edit Doctor</h3>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Doctor Name</label>
+            <input type="text" name="name" value="{{ doctor.name }}" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Specialization</label>
+            <input type="text" name="specialization" value="{{ doctor.specialization }}" class="form-control" required>
+        </div>
+
+        <button class="btn btn-success">Update</button>
+        <a href="/doctors/" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+{% endblock %}
+

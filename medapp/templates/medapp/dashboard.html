@@ -1,0 +1,36 @@
+{% extends 'medapp/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">MedCare Dashboard</h2>
+
+    <div class="row text-center">
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow p-4">
+                <h4 class="text-primary">Doctors</h4>
+                <h2>{{ total_doctors }}</h2>
+                <a href="{% url 'doctors' %}" class="btn btn-primary mt-2">View</a>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow p-4">
+                <h4 class="text-success">Patients</h4>
+                <h2>{{ total_patients }}</h2>
+                <a href="{% url 'patients' %}" class="btn btn-success mt-2">View</a>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow p-4">
+                <h4 class="text-warning">Appointments</h4>
+                <h2>{{ total_appointments }}</h2>
+                <a href="{% url 'appointments' %}" class="btn btn-warning mt-2">View</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
